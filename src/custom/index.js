@@ -61,3 +61,41 @@ module.exports.transformURL = function(value) {
 };
 
 module.exports.remarkPlugins = [];
+
+module.exports.availableLanguages = [
+    {
+        title: 'cURL',
+        short: 'cURL',
+        value: 'curl'
+    },
+    {
+        title: 'CLI',
+        short: 'cli',
+        value: 'cli'
+    },
+    {
+        title: 'Python',
+        short: 'Python',
+        value: 'python'
+    },
+    {
+        title: 'JavaScript',
+        short: 'JS',
+        value: 'javascript'
+    },
+    {
+        title: 'Java',
+        short: 'Java',
+        value: 'java'
+    },
+    {
+        title: 'Objective-C',
+        short: 'ObjC',
+        value: 'objc'
+    },
+    {
+        title: 'Swift',
+        short: 'Swift',
+        value: 'swift'
+    }
+];

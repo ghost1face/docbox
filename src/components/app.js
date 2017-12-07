@@ -5,35 +5,13 @@ import Content from './content';
 import RoundedToggle from './rounded_toggle';
 import GithubSlugger from 'github-slugger';
 import debounce from 'lodash.debounce';
-import { brandNames, brandClasses } from '../custom';
+import { brandNames, brandClasses, availableLanguages } from '../custom';
 import qs from 'querystring';
 
 let slugger = new GithubSlugger();
 let slug = title => { slugger.reset(); return slugger.slug(title); };
 
-let languageOptions = [
-  { title: 'cURL',
-    short: 'cURL',
-    value: 'curl' },
-  { title: 'CLI',
-    short: 'cli',
-    value: 'cli' },
-  { title: 'Python',
-    short: 'Python',
-    value: 'python' },
-  { title: 'JavaScript',
-    short: 'JS',
-    value: 'javascript' },
-  { title: 'Java',
-    short: 'Java',
-    value: 'java' },
-  { title: 'Objective-C',
-    short: 'ObjC',
-    value: 'objc' },
-  { title: 'Swift',
-    short: 'Swift',
-    value: 'swift' }
-];
+let languageOptions = availableLanguages;
 
 let defaultLanguage = languageOptions[0];
 
@@ -188,7 +166,8 @@ export default class App extends React.PureComponent {
         </div>
       </div>
 
-      {/* Language toggle */ }
+      {/* Language toggle */}
+      {this.state.language &&
       <div className={`fixed-top ${queryMatches.desktop && 'space-left16'}`}>
         <div className={`events fill-light bottom-shadow pad1 ${col1 ? '' : 'col6 pin-topright'} ${queryMatches.tablet ? 'dark fill-blue' : ''} ${queryMatches.mobile ? 'space-top5 fixed-topright' : ''}`}>
           <div className='space-right1 small quiet inline'>
@@ -209,6 +188,7 @@ export default class App extends React.PureComponent {
           </div>
         </div>
       </div>
+      }
 
       {/* Header */ }
       <div className={`fill-dark dark bottom-shadow fixed-top ${queryMatches.tablet ? 'pad1y pad2x col6' : 'pad0 width16'}`}>
