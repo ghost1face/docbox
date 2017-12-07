@@ -167,7 +167,6 @@ export default class App extends React.PureComponent {
       </div>
 
       {/* Language toggle */}
-      {this.state.language &&
       <div className={`fixed-top ${queryMatches.desktop && 'space-left16'}`}>
         <div className={`events fill-light bottom-shadow pad1 ${col1 ? '' : 'col6 pin-topright'} ${queryMatches.tablet ? 'dark fill-blue' : ''} ${queryMatches.mobile ? 'space-top5 fixed-topright' : ''}`}>
           <div className='space-right1 small quiet inline'>
@@ -188,7 +187,6 @@ export default class App extends React.PureComponent {
           </div>
         </div>
       </div>
-      }
 
       {/* Header */ }
       <div className={`fill-dark dark bottom-shadow fixed-top ${queryMatches.tablet ? 'pad1y pad2x col6' : 'pad0 width16'}`}>
